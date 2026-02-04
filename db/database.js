@@ -21,3 +21,14 @@ db.run(
         )
     )`
 );
+
+db.run(
+    `(
+        CREATE TABLE IF NOT EXISTS otps
+        (
+            mobile TEXT PRIMARY KEY,
+            otp TEXT NOT NULL
+            expireAt INTEGER NOT NULL,
+        )
+    )`
+)

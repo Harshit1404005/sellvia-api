@@ -13,9 +13,18 @@ export function signupController(req, res){
         try {
             const data = JSON.parse(body);
 
+            const user = {
+                id: "U_" + Date.now(),
+                name: data.name,
+                mobile: data.mobile,
+                createdAt: new Date().toISOString()
+            };
+
             if (!data.mobile){
-                res.writeHead
+                res.statu
             }
+
+
 
         } catch (error) {
             
