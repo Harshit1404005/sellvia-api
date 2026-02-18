@@ -1,10 +1,10 @@
-export {db} from "../db/database.js"
+import { db } from "../db/database.js"
 
-export function saveOtp({mobile, otp, expiresAt}){
+export function saveOtp({ mobile, otp, expiresAt }) {
     return new Promise((resolve, reject) => {
         db.run(
             `
-                INSERT INTO otps VALUES (mobile, otp, expiresAt)
+                INSERT INTO otps (mobile, otp, expiresAt)
                 VALUES (?, ?, ?)
                 ON CONFLICT(mobile)
                 DO UPDATE SET otp=?, expiresAt=?
